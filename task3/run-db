@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$1" = "-b" ] || [ "$1" = "--build" ]; then
+  docker build -t olc-interview-db .
+fi
+
+docker run -p 127.0.0.1:5432:5432 --volume olc-volume:/var/lib/postgresql/data olc-interview-db
