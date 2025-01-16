@@ -53,13 +53,14 @@ def player_move(s: State, active_player: int, roll_val: int, board: Board, rec_c
         print(f"\t\tHráč {active_player} šlápl na hada, vrátí se na pole", snakes[s[active_player]])
         s[active_player] = snakes[s[active_player]]
 
-    for player, pos in enumerate(s):
-        if player == active_player:
-            continue
-        if pos == s[active_player]:
-            print(f"\t\tHráč {active_player} narazil na hráče {player}, který se vrací o 1 pole")
-            if not player_move(s, player, -1, board, rec_cnt + 1):
-                return False
+    if s[active_player] > 0: # check for collisions, on start tile can't be any
+        for player, pos in enumerate(s):
+            if player == active_player:
+                continue
+            if pos == s[active_player]:
+                print(f"\t\tHráč {active_player} narazil na hráče {player}, který se vrací o 1 pole")
+                if not player_move(s, player, -1, board, rec_cnt + 1):
+                    return False
     return True
 
 def game_init(players: int) -> State:

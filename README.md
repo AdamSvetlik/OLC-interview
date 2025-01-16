@@ -1,6 +1,9 @@
 ## Task 1 - Hadi a žebříky
 
+Hráči, kola hry a herní pole jsou indexovány od 0.
+
 ### Spuštění hry
+
 Hru spustíte pomocí příkazu:
 ```bash
 python3 task1/game.py
@@ -8,9 +11,20 @@ python3 task1/game.py
 v kořenovém adresáři projektu.
 
 ### Testy
+
 Pro hru jsem vytvořil několik jednoduchých testů pro funkce `game_loop` a `player_move` za pomocí knihovny `pytest`. Testy spustíte pomocí příkazu:
 ```bash
 uv run pytest .
+```
+v kořenovém adresáři projektu.
+
+## Task 2 - OOP
+
+### Spuštění
+
+Program spustíte příkazem:
+```bash
+python3 task2/html.py
 ```
 v kořenovém adresáři projektu.
 
